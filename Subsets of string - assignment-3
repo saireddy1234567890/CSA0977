@@ -1,0 +1,32 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class SubsetsOfString {
+
+    public static void main(String[] args) {
+        String str = "abcd";
+        List<String> subsets = getSubsets(str);
+        System.out.println("Subsets of " + str + " are: " + subsets);
+    }
+
+    private static List<String> getSubsets(String str) {
+        List<String> subsets = new ArrayList<>();
+        int length = str.length();
+
+        // Loop through all possible combinations of characters
+        for (int i = 0; i < (1 << length); i++) {
+            StringBuilder subset = new StringBuilder();
+            // Check which characters should be included in this subset
+            for (int j = 0; j < length; j++) {
+                if ((i & (1 << j)) > 0) {
+                    subset.append(str.charAt(j));
+                }
+            }
+            // Add this subset to the list
+            subsets.add(subset.toString());
+        }
+
+        return subsets;
+    }
+
+}
