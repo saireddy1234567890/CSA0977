@@ -1,0 +1,15 @@
+5.
+public class LeftShiftOperator {
+    public static void main(String[] args) {
+        int num1 = 42;
+        int num2 = -42;
+
+        // left shift operator on positive integer
+        int leftShift1 = num1 << 1;
+        System.out.println(num1 + " << 1 = " + leftShift1);
+
+        // left shift operator on negative integer
+        int leftShift2 = num2 << 2;
+        System.out.println(num2 + " << 2 = " + leftShift2);
+    }
+}
