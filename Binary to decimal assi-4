@@ -1,0 +1,27 @@
+1.
+import java.util.Scanner;
+
+public class BinaryToDecimal {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter a binary number: ");
+        String binaryStr = input.nextLine();
+
+        int decimal = binaryToDecimal(binaryStr);
+        System.out.println("The decimal equivalent of " + binaryStr + " is " + decimal);
+    }
+
+    public static int binaryToDecimal(String binaryStr) {
+        int decimal = 0;
+        int base = 1;
+
+        for (int i = binaryStr.length() - 1; i >= 0; i--) {
+            if (binaryStr.charAt(i) == '1') {
+                decimal += base;
+            }
+            base *= 2;
+        }
+
+        return decimal;
+    }
+}
