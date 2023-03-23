@@ -1,0 +1,15 @@
+6.
+public class SignedRightShiftOperator {
+    public static void main(String[] args) {
+        int num1 = 42;
+        int num2 = -42;
+
+        // signed right shift operator on positive integer
+        int signedRightShift1 = num1 >> 1;
+        System.out.println(num1 + " >> 1 = " + signedRightShift1);
+
+        // signed right shift operator on negative integer
+        int signedRightShift2 = num2 >> 2;
+        System.out.println(num2 + " >> 2 = " + signedRightShift2);
+    }
+}
