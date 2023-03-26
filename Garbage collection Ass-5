@@ -1,0 +1,17 @@
+2.
+public class GarbageCollectionExample {
+    public static void main(String[] args) {
+        // create some objects
+        Object obj1 = new Object();
+        Object obj2 = new Object();
+        
+        // assign obj1 to null
+        obj1 = null;
+        
+        // request garbage collection
+        System.gc();
+        
+        // do some other work
+        // ...
+    }
+}
