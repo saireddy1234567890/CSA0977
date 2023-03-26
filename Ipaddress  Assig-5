@@ -1,0 +1,16 @@
+4.
+import java.net.*;
+
+public class IPAddressFinder {
+    public static void main(String[] args) {
+        String hostname = "www.google.com";
+
+        try {
+            InetAddress ipAddress = InetAddress.getByName(hostname);
+            System.out.println("IP address of " + hostname + ": " + ipAddress.getHostAddress());
+        } catch (UnknownHostException e) {
+            System.err.println("Could not find IP address for " + hostname);
+            e.printStackTrace();
+        }
+    }
+}
