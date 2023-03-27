@@ -1,0 +1,27 @@
+5.
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class PingExample {
+    public static void main(String[] args) {
+        String ipAddress = "127.0.0.1"; // IP address to ping
+
+        try {
+            // create a new process to execute the ping command
+            Process process = Runtime.getRuntime().exec("ping " + ipAddress);
+
+            // read the output of the command
+            BufferedReader input = new BufferedReader(new InputStreamReader(process.getInputStream()));
+            String line;
+
+            while ((line = input.readLine()) != null) {
+                System.out.println(line);
+            }
+
+            input.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
